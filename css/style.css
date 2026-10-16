@@ -1,0 +1,13 @@
+/* External CSS */
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.external {
+    color: darkorange;
+    text-align: center;
+    border: 2px solid darkorange;
+    padding: 10px;
+}
