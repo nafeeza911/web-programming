@@ -1,0 +1,9 @@
+body { background-color: lightyellow; text-align: center; font-family: Arial; }
+
+h1 { background-color: lightblue; color: orange; padding: 15px; }
+
+h2 { background-color: lightgreen; color: green; padding: 8px; }
+
+h3 { color: brown; }
+
+p { color: blue; font-size: 18px; margin: 10px; }
