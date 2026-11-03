@@ -1,0 +1,121 @@
+<h2>JavaScript String Object Methods</h2>
+
+Enter a String:
+<input type="text" id="str" placeholder="Enter a string">
+<button onclick="stringMethods()">Submit</button>
+
+<p id="stringResult"></p>
+
+<script>
+    function stringMethods() {
+
+        var str = document.getElementById("str").value;
+
+        if (str === "") {
+            alert("Please enter a string!");
+            return;
+        }
+
+        var result = "";
+
+        result += "<b>Original String:</b> " + str + "<br><br>";
+
+        // 1. charAt()
+        result += "<b>1. charAt(2):</b> " + str.charAt(2) + "<br>";
+
+        // 2. concat()
+        result += "<b>2. concat(' Language'):</b> "
+               + str.concat(" Language") + "<br>";
+
+        // 3. indexOf()
+        result += "<b>3. indexOf('Script'):</b> "
+               + str.indexOf("Script") + "<br>";
+
+        // 4. lastIndexOf()
+        result += "<b>4. lastIndexOf('a'):</b> "
+               + str.lastIndexOf("a") + "<br>";
+
+        // 5. toLowerCase()
+        result += "<b>5. toLowerCase():</b> "
+               + str.toLowerCase() + "<br>";
+
+        // 6. toUpperCase()
+        result += "<b>6. toUpperCase():</b> "
+               + str.toUpperCase() + "<br>";
+
+        // 7. slice()
+        result += "<b>7. slice(0, 10):</b> "
+               + str.slice(0, 10) + "<br>";
+
+        // 8. trim()
+        result += "<b>8. trim():</b> "
+               + ("  " + str + "  ").trim() + "<br>";
+
+        // 9. split()
+        result += "<b>9. split(' '):</b> "
+               + str.split(" ").join(", ") + "<br>";
+
+        // 10. String Object
+        var obj = new String(str);
+        result += "<b>10. String Object:</b> " + obj + "<br>";
+
+        document.getElementById("stringResult").innerHTML = result;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Math Object Methods</h2>
+
+Enter a Number:
+<input type="number" id="num" placeholder="Enter a number">
+<button onclick="mathMethods()">Submit</button>
+
+<p id="mathResult"></p>
+
+<script>
+    function mathMethods() {
+
+        var num = document.getElementById("num").value;
+
+        if (num === "") {
+            alert("Please enter a number!");
+            return;
+        }
+
+        num = Number(num);
+
+        var result = "";
+
+        // 1. Math.sqrt()
+        result += "<b>1. Math.sqrt(" + num + "):</b> "
+               + Math.sqrt(num) + "<br>";
+
+        // 2. Math.random()
+        result += "<b>2. Math.random():</b> "
+               + Math.random() + "<br>";
+
+        // 3. Math.pow()
+        result += "<b>3. Math.pow(" + num + ", 3):</b> "
+               + Math.pow(num, 3) + "<br>";
+
+        // 4. Math.floor()
+        result += "<b>4. Math.floor(" + num + "):</b> "
+               + Math.floor(num) + "<br>";
+
+        // 5. Math.ceil()
+        result += "<b>5. Math.ceil(" + num + "):</b> "
+               + Math.ceil(num) + "<br>";
+
+        // 6. Math.round()
+        result += "<b>6. Math.round(" + num + "):</b> "
+               + Math.round(num) + "<br>";
+
+        // 7. Math.abs()
+        result += "<b>7. Math.abs(" + num + "):</b> "
+               + Math.abs(num) + "<br>";
+
+        document.getElementById("mathResult").innerHTML = result;
+    }
+</script>
+

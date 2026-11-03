@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript String and Math Objects</title>
+</head>
+<body>
+
+    <h2>JavaScript String Object Methods</h2>
+
+    <script>
+        // Main String
+        var str = "JavaScript Programming";
+
+        document.write("<b>Original String:</b> " + str + "<br><br>");
+
+        // 1. charAt()
+        document.write("<b>1. charAt(2):</b> " + str.charAt(2) + "<br>");
+
+        // 2. concat()
+        document.write("<b>2. concat(' Language'):</b> "
+                       + str.concat(" Language") + "<br>");
+
+        // 3. indexOf()
+        document.write("<b>3. indexOf('Script'):</b> "
+                       + str.indexOf("Script") + "<br>");
+
+        // 4. lastIndexOf()
+        document.write("<b>4. lastIndexOf('a'):</b> "
+                       + str.lastIndexOf("a") + "<br>");
+
+        // 5. toLowerCase()
+        document.write("<b>5. toLowerCase():</b> "
+                       + str.toLowerCase() + "<br>");
+
+        // 6. toUpperCase()
+        document.write("<b>6. toUpperCase():</b> "
+                       + str.toUpperCase() + "<br>");
+
+        // 7. slice()
+        document.write("<b>7. slice(0, 10):</b> "
+                       + str.slice(0, 10) + "<br>");
+
+        // 8. trim()
+        document.write("<b>8. trim():</b> "
+                       + ("  " + str + "  ").trim() + "<br>");
+
+        // 9. split()
+        document.write("<b>9. split(' '):</b> "
+                       + str.split(" ").join(", ") + "<br>");
+
+        // 10. String Object
+        var obj = new String(str);
+        document.write("<b>10. String Object:</b> " + obj + "<br>");
+
+    </script>
+
+    <hr>
+
+    <h2>JavaScript Math Object Methods</h2>
+
+    <script>
+        // 1. Math.sqrt()
+        document.write("<b>1. Math.sqrt(17):</b> " + Math.sqrt(17) + "<br>");
+
+        // 2. Math.random()
+        document.write("<b>2. Math.random():</b> " + Math.random() + "<br>");
+
+        // 3. Math.pow()
+        document.write("<b>3. Math.pow(2, 3):</b> " + Math.pow(2, 3) + "<br>");
+
+        // 4. Math.floor()
+        document.write("<b>4. Math.floor(3.7):</b> " + Math.floor(3.7) + "<br>");
+
+        // 5. Math.ceil()
+        document.write("<b>5. Math.ceil(3.7):</b> " + Math.ceil(3.7) + "<br>");
+
+        // 6. Math.round()
+        document.write("<b>6. Math.round(3.7):</b> " + Math.round(3.7) + "<br>");
+
+        // 7. Math.abs()
+        document.write("<b>7. Math.abs(-4):</b> " + Math.abs(-4) + "<br>");
+
+    </script>
+
+</body>
+</html>
+
