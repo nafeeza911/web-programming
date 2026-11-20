@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Mouse events</title>
+<style>
+body {
+    text-align: center;
+    font-family: Arial;
+    padding-top: 50px;
+}
+img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+h2 {
+    color: purple;
+}
+</style>
+</head>
+<body>
+<h2>Mouse Events</h2>
+
+<img id="pic" src="images.jpeg"
+     onmouseover="changeContent()"
+     onmouseout="changeBack()">
+
+<p id="msg">Move mouse over this image</p>
+
+<script>
+function changeContent() {
+    document.getElementById("pic").src = "panda.jpeg";
+    document.getElementById("msg").innerHTML = "hi welcome!";
+}
+
+function changeBack() {
+    document.getElementById("pic").src = "images.jpeg";
+    document.getElementById("msg").innerHTML = "hello here iam!";
+}
+</script>
+</body>
+</html>
