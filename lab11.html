@@ -1,0 +1,153 @@
+
+<html>
+<head>
+<title>Online Exam</title>
+<style>
+body {
+    background: lightblue;
+    text-align: center;
+    font-family: Arial;
+}
+form {
+    background: white;
+    width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+h2 {
+    color: lightblue;
+}
+.question {
+    text-align: left;
+    margin: 15px;
+}
+input[type="submit"] {
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form onsubmit="return checkAnswer()">
+<h2>Online Examination</h2>
+<p>Answer all questions</p>
+<h3 id="timer">Time Left: 10:00</h3>
+
+<div class="question">
+<p>1. Which is the largest continent in the world?</p>
+<input type="radio" name="q1" value="Africa"> Africa<br>
+<input type="radio" name="q1" value="Asia"> Asia<br>
+<input type="radio" name="q1" value="Europe"> Europe<br>
+</div>
+
+<div class="question">
+<p>2. How many days are there in a leap year?</p>
+<input type="radio" name="q2" value="365"> 365<br>
+<input type="radio" name="q2" value="366"> 366<br>
+<input type="radio" name="q2" value="364"> 364<br>
+</div>
+
+<div class="question">
+<p>3. Which is the fastest land animal?</p>
+<input type="radio" name="q3" value="Lion"> Lion<br>
+<input type="radio" name="q3" value="Tiger"> Tiger<br>
+<input type="radio" name="q3" value="Cheetah"> Cheetah<br>
+</div><br>
+
+<div class="question">
+<p>4. Which planet is known as the Red Planet?</p>
+<input type="radio" name="q4" value="Earth"> Earth<br>
+<input type="radio" name="q4" value="Mars"> Mars<br>
+<input type="radio" name="q4" value="Venus"> Venus<br>
+</div><br>
+
+<div class="question">
+<p>5. How many colors are there in a rainbow?</p>
+<input type="radio" name="q5" value="Five"> Five<br>
+<input type="radio" name="q5" value="Seven"> Seven<br>
+<input type="radio" name="q5" value="Eight"> Eight<br>
+</div><br>
+
+<div class="question">
+<p>6. Which is the national bird of India?</p>
+<input type="radio" name="q6" value="Parrot"> Parrot<br>
+<input type="radio" name="q6" value="Peacock"> Peacock<br>
+<input type="radio" name="q6" value="Eagle"> Eagle<br>
+</div><br>
+
+<div class="question">
+<p>7. Which gas do humans need to breathe?</p>
+<input type="radio" name="q7" value="Oxygen"> Oxygen<br>
+<input type="radio" name="q7" value="Nitrogen"> Nitrogen<br>
+<input type="radio" name="q7" value="Carbon dioxide"> Carbon dioxide<br>
+</div><br>
+
+<div class="question">
+<p>8. Who invented the telephone?</p>
+<input type="radio" name="q8" value="Thomas Edison"> Thomas Edison<br>
+<input type="radio" name="q8" value="Alexander Graham Bell"> Alexander Graham Bell<br>
+<input type="radio" name="q8" value="Isaac Newton"> Isaac Newton<br>
+</div><br>
+
+<div class="question">
+<p>9. Which is the smallest prime number?</p>
+<input type="radio" name="q9" value="1"> 1<br>
+<input type="radio" name="q9" value="2"> 2<br>
+<input type="radio" name="q9" value="3"> 3<br>
+</div><br>
+
+<div class="question">
+<p>10. Which is the largest mammal in the world?</p>
+<input type="radio" name="q10" value="Elephant"> Elephant<br>
+<input type="radio" name="q10" value="Blue Whale"> Blue Whale<br>
+<input type="radio" name="q10" value="Giraffe"> Giraffe<br>
+</div><br>
+
+<input type="submit" value="Submit Exam">
+<h3 id="result"></h3>
+</form>
+
+<script>
+var time = 600;
+var submitted = false;
+var timer = setInterval(function() {
+    var min = Math.floor(time / 60);
+    var sec = time % 60;
+    document.getElementById("timer").innerHTML =
+    "Time Left: " + min + ":" + (sec < 10 ? "0" : "") + sec;
+    time--;
+    if (time < 0) {
+        clearInterval(timer);
+        alert("Time is up!");
+        checkAnswer();
+    }
+}, 1000);
+
+function checkAnswer() {
+    if (submitted) return false;
+    submitted = true;
+    clearInterval(timer);
+    var answers = ["Asia", "366", "Cheetah",
+    "Mars", "Seven", "Peacock", "Oxygen",
+    "Alexander Graham Bell", "2", "Blue Whale"];
+    var score = 0;
+    for (var i = 1; i <= 10; i++) {
+        var q = document.querySelector('input[name="q' + i + '"]:checked');
+
+        if (q && q.value == answers[i-1]) {
+            score++;
+        }
+    }
+    document.getElementById("result").innerHTML =
+    "Exam Completed!<br>Your Score: " + score + "/10";
+    return false;
+}
+</script>
+</body>
+</html>
+
